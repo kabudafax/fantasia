@@ -1,0 +1,27 @@
+[package]
+name = "skytrade-mint"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "skytrade_mint"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = { version = "0.29.0", features = ["init-if-needed"] }
+anchor-spl = { version = "0.29.0", features = ["metadata"] }
+mpl-token-metadata = "3.1.0"
+#mpl-bubblegum = { version = "1.3.0" }
+#spl-account-compression = { version = "0.3.0", features = ["cpi"] }
+solana-program = "=1.18.11"
+winnow = "=0.6.6"
+account-compression-cpi = { path = "../../libs/account-compression" }
+bubblegum-cpi = { path = "../../libs/bubblegum" }
